@@ -310,7 +310,7 @@ public struct BitBucketServerPR: Decodable {
     public let title: String
     
     /// The creator of the PR
-    public let description: String
+    public let description: String?
     
     /// The pull request's current status.
     public let state: String
