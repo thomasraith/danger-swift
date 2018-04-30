@@ -337,27 +337,26 @@ public struct BitBucketServerPR: Decodable {
     public let isLocked: Bool
     
     /// The creator of the PR
-    public let author: BitBucketServerAuthor
+    public let author: BitBucketServerUserEncapsulation
     
     /// People requested as reviewers
-    public let reviewers: [BitBucketServerUser]
+    public let reviewers: [BitBucketServerUserEncapsulation]
     
     /// People who have participated in the PR
-    public let participants: [BitBucketServerUser]
+    public let participants: [BitBucketServerUserEncapsulation]
+}
+
+// MARK: - BitBucketServerUserEncapsulation
+
+public struct BitBucketServerUserEncapsulation: Decodable {
     
-    
-    // MARK: - BitBucketServerAuthor
-    
-    public struct BitBucketServerAuthor: Decodable {
-        
-        enum CodingKeys: String, CodingKey {
-            case user
-        }
-        
-        /// The BitBucket Server User
-        public let user: BitBucketServerUser
-        
+    enum CodingKeys: String, CodingKey {
+        case user
     }
+    
+    /// The BitBucket Server User
+    public let user: BitBucketServerUser
+    
 }
 
 
@@ -482,7 +481,7 @@ public struct BitBucketServerUser: Decodable {
     /// The user's slug for URLs
     public let slug: String
     
-    /// The type of a user, "NORMAL" being a typical user3
+    /// The type of a user, "NORMAL" being a typical user
     public let type: String
     
 }

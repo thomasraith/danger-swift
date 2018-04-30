@@ -33,7 +33,7 @@ extension BitBucketServerMetadata: AutoEquatable {}
 extension BitBucketServer: AutoEquatable {}
 extension BitBucketServerCommit: AutoEquatable {}
 extension BitBucketServerCommit.BitBucketServerCommitParent: AutoEquatable {}
-extension BitBucketServerPR.BitBucketServerAuthor: AutoEquatable {}
+extension BitBucketServerUserEncapsulation: AutoEquatable {}
 extension BitBucketServerComment.BitBucketServerCommentInner: AutoEquatable {}
 extension BitBucketServerComment.BitBucketServerCommentInner.BitBucketServerCommentInnerProperties: AutoEquatable {}
 extension BitBucketServerComment.BitBucketServerCommentInner.BitBucketServerCommentTask: AutoEquatable {}

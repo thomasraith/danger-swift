@@ -148,12 +148,6 @@ public func == (lhs: BitBucketServerPR, rhs: BitBucketServerPR) -> Bool {
     guard lhs.participants == rhs.participants else { return false }
     return true
 }
-// MARK: - BitBucketServerPR.BitBucketServerAuthor AutoEquatable
-extension BitBucketServerPR.BitBucketServerAuthor: Equatable {}
-public func == (lhs: BitBucketServerPR.BitBucketServerAuthor, rhs: BitBucketServerPR.BitBucketServerAuthor) -> Bool {
-    guard lhs.user == rhs.user else { return false }
-    return true
-}
 // MARK: - BitBucketServerProject AutoEquatable
 extension BitBucketServerProject: Equatable {}
 public func == (lhs: BitBucketServerProject, rhs: BitBucketServerProject) -> Bool {
@@ -185,6 +179,12 @@ public func == (lhs: BitBucketServerUser, rhs: BitBucketServerUser) -> Bool {
     guard lhs.active == rhs.active else { return false }
     guard lhs.slug == rhs.slug else { return false }
     guard lhs.type == rhs.type else { return false }
+    return true
+}
+// MARK: - BitBucketServerUserEncapsulation AutoEquatable
+extension BitBucketServerUserEncapsulation: Equatable {}
+public func == (lhs: BitBucketServerUserEncapsulation, rhs: BitBucketServerUserEncapsulation) -> Bool {
+    guard lhs.user == rhs.user else { return false }
     return true
 }
 // MARK: - Git AutoEquatable
